@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Galeri Sedatur Starter</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f5f7fb;margin:0;padding:20px}
+h1{text-align:center;color:#14532d}
+p{text-align:center;color:#666}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;max-width:1200px;margin:auto}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.info{padding:12px}
+</style></head><body>
+<h1>Galeri Sedatur</h1>
+<p>Duplikasikan blok <code>photos</code> sesuai kebutuhan hingga 50+ foto.</p>
+<div class="gallery" id="gallery"></div>
+<script>
+const photos=[
+{title:"Foto 1",desc:"Deskripsi",image:"LINK_FOTO_1"},
+{title:"Foto 2",desc:"Deskripsi",image:"LINK_FOTO_2"},
+];
+const g=document.getElementById("gallery");
+photos.forEach(p=>{
+const c=document.createElement("div");
+c.className="card";
+c.innerHTML=`<img loading="lazy" src="${p.image}" alt=""><div class="info"><h3>${p.title}</h3><p>${p.desc}</p></div>`;
+g.appendChild(c);
+});
+</script>
+</body></html>
