@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Sedatur Event</title>
+
+<meta
+name="description"
+content="Sedatur Event — Informasi kegiatan dan acara Sedatur Rawamangun.">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Arial,
+sans-serif;
+
+background:var(--background);
+
+color:var(--text);
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+transition:
+background .3s,
+color .3s;
+
+}
+
+:root{
+
+--primary:#00b7ff;
+
+--accent:#7c3aed;
+
+--background:#071018;
+
+--text:#ffffff;
+
+--muted:#91a2ae;
+
+--border:rgba(255,255,255,.09);
+
+}
+
+
+/* =========================
+BACKGROUND GLOW
+========================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:420px;
+height:420px;
+
+background:var(--primary);
+
+filter:blur(150px);
+
+opacity:.11;
+
+top:-180px;
+left:-180px;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:420px;
+height:420px;
+
+background:var(--accent);
+
+filter:blur(150px);
+
+opacity:.09;
+
+right:-180px;
+bottom:-180px;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+
+/* =========================
+CONTAINER
+========================= */
+
+.container{
+
+width:min(1100px,92%);
+
+margin:auto;
+
+}
+
+
+/* =========================
+TOPBAR
+========================= */
+
+.topbar{
+
+padding:18px 0 0;
+
+}
+
+.topbar-inner{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:15px;
+
+}
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:15px;
+
+font-weight:800;
+
+}
+
+.brand-dot{
+
+width:10px;
+height:10px;
+
+border-radius:50%;
+
+background:var(--primary);
+
+box-shadow:
+0 0 15px var(--primary);
+
+}
+
+.clock{
+
+text-align:right;
+
+}
+
+.clock-time{
+
+font-size:15px;
+
+font-weight:700;
+
+}
+
+.clock-date{
+
+font-size:10px;
+
+color:var(--muted);
+
+margin-top:2px;
+
+}
+
+
+/* =========================
+RUNNING TEXT
+========================= */
+
+.ticker{
+
+margin-top:18px;
+
+overflow:hidden;
+
+border-top:
+1px solid var(--border);
+
+border-bottom:
+1px solid var(--border);
+
+background:
+rgba(255,255,255,.025);
+
+}
+
+.ticker-track{
+
+display:flex;
+
+width:max-content;
+
+animation:
+tickerMove 30s linear infinite;
+
+}
+
+.ticker-content{
+
+display:flex;
+
+align-items:center;
+
+white-space:nowrap;
+
+}
+
+.ticker-item{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:11px 25px;
+
+font-size:12px;
+
+color:var(--muted);
+
+}
+
+.ticker-dot{
+
+width:5px;
+height:5px;
+
+border-radius:50%;
+
+background:var(--primary);
+
+box-shadow:
+0 0 8px var(--primary);
+
+}
+
+@keyframes tickerMove{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(-50%);
+}
+
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+padding:65px 0 45px;
+
+}
+
+.hero-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+padding:8px 13px;
+
+border:
+1px solid var(--border);
+
+background:
+rgba(255,255,255,.05);
+
+backdrop-filter:blur(12px);
+
+border-radius:999px;
+
+font-size:11px;
+
+font-weight:800;
+
+color:var(--primary);
+
+margin-bottom:20px;
+
+}
+
+.hero-badge-dot{
+
+width:7px;
+height:7px;
+
+border-radius:50%;
+
+background:#32e875;
+
+box-shadow:
+0 0 12px #32e875;
+
+}
+
+.hero h1{
+
+font-size:
+clamp(42px,8vw,76px);
+
+line-height:1.02;
+
+letter-spacing:-2.8px;
+
+max-width:850px;
+
+}
+
+.hero h1 strong{
+
+background:
+linear-gradient(
+90deg,
+var(--text),
+var(--primary)
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.hero-description{
+
+margin-top:20px;
+
+max-width:650px;
+
+color:var(--muted);
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-top:28px;
+
+}
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:13px 19px;
+
+border-radius:14px;
+
+font-size:12px;
+
+font-weight:800;
+
+text-decoration:none;
+
+transition:.25s;
+
+}
+
+.btn-primary{
+
+background:var(--primary);
+
+color:#001018;
+
+}
+
+.btn-secondary{
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid var(--border);
+
+color:var(--text);
+
+}
+
+.btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+/* =========================
+SECTION
+========================= */
+
+section{
+
+padding:35px 0;
+
+}
+
+.section-heading{
+
+margin-bottom:20px;
+
+}
+
+.section-heading h2{
+
+font-size:25px;
+
+}
+
+.section-heading p{
+
+margin-top:5px;
+
+font-size:12px;
+
+color:var(--muted);
+
+}
+
+
+/* =========================
+FEATURED EVENT
+========================= */
+
+.featured{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:26px;
+
+border:
+1px solid var(--border);
+
+background:
+rgba(255,255,255,.04);
+
+box-shadow:
+0 25px 70px rgba(0,0,0,.25);
+
+}
+
+.featured-image{
+
+height:350px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.featured-image img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:.5s;
+
+}
+
+.featured:hover
+.featured-image img{
+
+transform:scale(1.04);
+
+}
+
+.featured-image::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+transparent 20%,
+rgba(0,0,0,.92)
+);
+
+}
+
+.featured-badge{
+
+position:absolute;
+
+top:18px;
+left:18px;
+
+z-index:2;
+
+padding:8px 12px;
+
+border-radius:999px;
+
+background:
+rgba(0,0,0,.55);
+
+backdrop-filter:blur(12px);
+
+font-size:10px;
+
+font-weight:800;
+
+color:#fff;
+
+}
+
+.featured-content{
+
+position:absolute;
+
+z-index:3;
+
+left:25px;
+right:25px;
+bottom:25px;
+
+}
+
+.featured-content small{
+
+font-size:10px;
+
+font-weight:800;
+
+color:var(--primary);
+
+letter-spacing:1px;
+
+}
+
+.featured-content h2{
+
+font-size:
+clamp(26px,5vw,43px);
+
+margin-top:6px;
+
+}
+
+.featured-content p{
+
+color:#cbd5da;
+
+font-size:13px;
+
+margin-top:6px;
+
+max-width:650px;
+
+line-height:1.5;
+
+}
+
+.featured-info{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:9px;
+
+margin-top:15px;
+
+}
+
+.featured-info span{
+
+padding:8px 11px;
+
+border-radius:10px;
+
+background:
+rgba(255,255,255,.08);
+
+border:
+1px solid
+rgba(255,255,255,.1);
+
+font-size:10px;
+
+color:#e7edf0;
+
+}
+
+
+/* =========================
+INFO GRID
+========================= */
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(210px,1fr)
+);
+
+gap:14px;
+
+}
+
+.info-card{
+
+padding:20px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.045);
+
+border:
+1px solid var(--border);
+
+transition:.25s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-4px);
+
+}
+
+.info-icon{
+
+font-size:24px;
+
+margin-bottom:13px;
+
+}
+
+.info-card h3{
+
+font-size:15px;
+
+margin-bottom:7px;
+
+}
+
+.info-card p{
+
+font-size:12px;
+
+line-height:1.65;
+
+color:var(--muted);
+
+}
+
+
+/* =========================
+EVENT GRID
+========================= */
+
+.event-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(270px,1fr)
+);
+
+gap:16px;
+
+}
+
+.event-card{
+
+overflow:hidden;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.045);
+
+border:
+1px solid var(--border);
+
+transition:.3s;
+
+}
+
+.event-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.event-image{
+
+height:190px;
+
+overflow:hidden;
+
+position:relative;
+
+background:#101820;
+
+}
+
+.event-image img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:.5s;
+
+}
+
+.event-card:hover
+.event-image img{
+
+transform:scale(1.05);
+
+}
+
+.event-status{
+
+position:absolute;
+
+top:13px;
+left:13px;
+
+padding:7px 10px;
+
+border-radius:999px;
+
+background:
+rgba(0,0,0,.58);
+
+backdrop-filter:blur(10px);
+
+font-size:9px;
+
+font-weight:800;
+
+color:#fff;
+
+}
+
+.event-content{
+
+padding:18px;
+
+}
+
+.event-content h3{
+
+font-size:18px;
+
+margin-bottom:7px;
+
+}
+
+.event-description{
+
+font-size:12px;
+
+line-height:1.6;
+
+color:var(--muted);
+
+margin-bottom:15px;
+
+}
+
+.event-meta{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:8px;
+
+}
+
+.event-meta div{
+
+padding:10px;
+
+border-radius:11px;
+
+background:
+rgba(255,255,255,.035);
+
+}
+
+.event-meta small{
+
+display:block;
+
+font-size:8px;
+
+color:var(--muted);
+
+margin-bottom:4px;
+
+}
+
+.event-meta span{
+
+font-size:11px;
+
+font-weight:700;
+
+}
+
+
+/* =========================
+EMPTY
+========================= */
+
+.empty{
+
+padding:30px;
+
+text-align:center;
+
+border:
+1px solid var(--border);
+
+border-radius:20px;
+
+color:var(--muted);
+
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+text-align:center;
+
+padding:45px 0 30px;
+
+font-size:11px;
+
+color:var(--muted);
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:650px){
+
+.hero{
+
+padding-top:50px;
+
+}
+
+.hero h1{
+
+letter-spacing:-1.8px;
+
+}
+
+.featured-image{
+
+height:300px;
+
+}
+
+.featured-content{
+
+left:20px;
+right:20px;
+bottom:20px;
+
+}
+
+.featured-info span{
+
+font-size:9px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+TOPBAR
+========================= -->
+
+<div class="topbar">
+
+<div class="container">
+
+<div class="topbar-inner">
+
+<div class="brand">
+
+<div class="brand-dot"></div>
+
+<span id="brandName">
+Sedatur Event
+</span>
+
+</div>
+
+
+<div class="clock">
+
+<div
+id="clockTime"
+class="clock-time">
+
+00:00:00
+
+</div>
+
+<div
+id="clockDate"
+class="clock-date">
+
+Memuat tanggal...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+RUNNING TEXT
+========================= -->
+
+<div class="ticker">
+
+<div class="ticker-track">
+
+<div
+class="ticker-content"
+id="tickerOne">
+</div>
+
+<div
+class="ticker-content"
+id="tickerTwo">
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+HERO
+========================= -->
+
+<header class="hero">
+
+<div class="container">
+
+<div class="hero-badge">
+
+<span class="hero-badge-dot"></span>
+
+<span id="heroBadge">
+SEDATUR EVENT
+</span>
+
+</div>
+
+
+<h1>
+
+<span id="heroTitle">
+Kumpulan kegiatan,
+</span>
+
+<strong id="heroHighlight">
+momen, dan cerita bersama.
+</strong>
+
+</h1>
+
+
+<p
+id="heroDescription"
+class="hero-description">
+
+Temukan berbagai kegiatan dan acara
+Sedatur dalam satu tempat.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#event-terdekat"
+class="btn btn-primary">
+
+Lihat Event
+
+</a>
+
+
+<a
+href="#semua-event"
+class="btn btn-secondary">
+
+Semua Event
+
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+EVENT TERDEKAT
+========================= -->
+
+<section id="event-terdekat">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>
+Event Terdekat
+</h2>
+
+<p>
+Jangan sampai ketinggalan kegiatan berikutnya.
+</p>
+
+</div>
+
+
+<div
+id="featuredEvent"
+class="featured">
+
+<div class="empty">
+
+Memuat event...
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+INFORMASI
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>
+Informasi Event
+</h2>
+
+<p>
+Hal penting sebelum mengikuti kegiatan.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<div class="info-icon">
+📅
+</div>
+
+<h3>
+Waktu
+</h3>
+
+<p>
+Perhatikan tanggal dan waktu acara
+agar tidak terlambat.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+📍
+</div>
+
+<h3>
+Lokasi
+</h3>
+
+<p>
+Pastikan mengetahui lokasi acara
+sebelum hari pelaksanaan.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+🚌
+</div>
+
+<h3>
+Transportasi
+</h3>
+
+<p>
+Informasi kendaraan dan akses menuju
+lokasi akan tersedia pada detail event.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+👕
+</div>
+
+<h3>
+Dresscode
+</h3>
+
+<p>
+Gunakan pakaian yang sesuai dengan
+ketentuan masing-masing event.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+SEMUA EVENT
+========================= -->
+
+<section id="semua-event">
+
+<div class="container">
+
+<div class="section-heading">
+
+<h2>
+Event Lainnya
+</h2>
+
+<p>
+Kumpulan kegiatan Sedatur lainnya.
+</p>
+
+</div>
+
+
+<div
+id="eventList"
+class="event-grid">
+
+<div class="empty">
+
+Memuat event...
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+© 2026
+
+<span id="footerName">
+Sedatur Rawamangun
+</span>
+
+· Sedatur Event
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+DATA
+========================= */
+
+let eventData=null;
+
+
+/* =========================
+CLOCK
+========================= */
+
+function updateClock(){
+
+const now=new Date();
+
+
+document.getElementById(
+"clockTime"
+).textContent=
+now.toLocaleTimeString(
+"id-ID",
+{
+hour:"2-digit",
+minute:"2-digit",
+second:"2-digit"
+}
+);
+
+
+document.getElementById(
+"clockDate"
+).textContent=
+now.toLocaleDateString(
+"id-ID",
+{
+weekday:"long",
+day:"numeric",
+month:"long",
+year:"numeric"
+}
+);
+
+}
+
+updateClock();
+
+setInterval(
+updateClock,
+1000
+);
+
+
+/* =========================
+THEME
+========================= */
+
+function applyTheme(theme){
+
+if(!theme)return;
+
+const root=
+document.documentElement;
+
+if(theme.primary){
+
+root.style.setProperty(
+"--primary",
+theme.primary
+);
+
+}
+
+if(theme.accent){
+
+root.style.setProperty(
+"--accent",
+theme.accent
+);
+
+}
+
+if(theme.background){
+
+root.style.setProperty(
+"--background",
+theme.background
+);
+
+}
+
+if(theme.text){
+
+root.style.setProperty(
+"--text",
+theme.text
+);
+
+}
+
+if(theme.muted){
+
+root.style.setProperty(
+"--muted",
+theme.muted
+);
+
+}
+
+if(theme.border){
+
+root.style.setProperty(
+"--border",
+theme.border
+);
+
+}
+
+}
+
+
+/* =========================
+TICKER
+========================= */
+
+function createTicker(messages){
+
+if(
+!Array.isArray(messages) ||
+!messages.length
+){
+
+messages=[
+"Selamat datang di Sedatur Event"
+];
+
+}
+
+
+const html=
+messages.map(
+message=>`
+
+<span class="ticker-item">
+
+<span class="ticker-dot"></span>
+
+${message}
+
+</span>
+
+`
+).join("");
+
+
+document.getElementById(
+"tickerOne"
+).innerHTML=html;
+
+
+document.getElementById(
+"tickerTwo"
+).innerHTML=html;
+
+}
+
+
+/* =========================
+FEATURED EVENT
+========================= */
+
+function loadFeatured(event){
+
+const box=
+document.getElementById(
+"featuredEvent"
+);
+
+
+if(!event){
+
+box.innerHTML=`
+
+<div class="empty">
+
+Belum ada event terdekat.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+box.innerHTML=`
+
+<div class="featured-image">
+
+<img
+src="${event.image || ""}"
+alt="${event.title || "Event"}"
+loading="eager">
+
+<div class="featured-badge">
+
+${event.status || "EVENT"}
+
+</div>
+
+<div class="featured-content">
+
+<small>
+${event.category || "SEDATUR EVENT"}
+</small>
+
+<h2>
+${event.title || "-"}
+</h2>
+
+<p>
+${event.description || ""}
+</p>
+
+<div class="featured-info">
+
+<span>
+📅 ${event.date || "-"}
+</span>
+
+<span>
+⏰ ${event.time || "-"}
+</span>
+
+<span>
+📍 ${event.location || "-"}
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+/* =========================
+ALL EVENTS
+========================= */
+
+function loadEvents(events){
+
+const list=
+document.getElementById(
+"eventList"
+);
+
+
+list.innerHTML="";
+
+
+if(
+!Array.isArray(events) ||
+!events.length
+){
+
+list.innerHTML=`
+
+<div class="empty">
+
+Belum ada event lainnya.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+events.forEach(
+event=>{
+
+const card=
+document.createElement(
+"article"
+);
+
+
+card.className=
+"event-card";
+
+
+card.innerHTML=`
+
+<div class="event-image">
+
+<img
+src="${event.image || ""}"
+alt="${event.title || "Event"}"
+loading="lazy">
+
+<div class="event-status">
+
+${event.status || "EVENT"}
+
+</div>
+
+</div>
+
+
+<div class="event-content">
+
+<h3>
+${event.title || "-"}
+</h3>
+
+
+<p class="event-description">
+
+${event.description || ""}
+
+</p>
+
+
+<div class="event-meta">
+
+
+<div>
+
+<small>
+📅 TANGGAL
+</small>
+
+<span>
+${event.date || "-"}
+</span>
+
+</div>
+
+
+<div>
+
+<small>
+⏰ WAKTU
+</small>
+
+<span>
+${event.time || "-"}
+</span>
+
+</div>
+
+
+<div>
+
+<small>
+📍 LOKASI
+</small>
+
+<span>
+${event.location || "-"}
+</span>
+
+</div>
+
+
+<div>
+
+<small>
+🏷️ KATEGORI
+</small>
+
+<span>
+${event.category || "-"}
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+`;
+
+
+list.appendChild(card);
+
+}
+);
+
+}
+
+
+/* =========================
+LOAD JSON
+========================= */
+
+fetch("event.json")
+
+.then(
+response=>{
+
+if(!response.ok){
+
+throw new Error(
+"event.json tidak ditemukan"
+);
+
+}
+
+return response.json();
+
+}
+)
+
+.then(
+data=>{
+
+eventData=data;
+
+
+/* THEME */
+
+applyTheme(
+data.theme
+);
+
+
+/* TICKER */
+
+createTicker(
+data.ticker
+);
+
+
+/* SITE */
+
+if(data.site){
+
+if(data.site.name){
+
+document.getElementById(
+"brandName"
+).textContent=
+data.site.name;
+
+}
+
+if(data.site.footer){
+
+document.getElementById(
+"footerName"
+).textContent=
+data.site.footer;
+
+}
+
+}
+
+
+/* HERO */
+
+if(data.hero){
+
+document.getElementById(
+"heroBadge"
+).textContent=
+data.hero.badge ||
+"SEDATUR EVENT";
+
+
+document.getElementById(
+"heroTitle"
+).textContent=
+data.hero.title ||
+"Kumpulan kegiatan,";
+
+
+document.getElementById(
+"heroHighlight"
+).textContent=
+data.hero.highlight ||
+"momen, dan cerita bersama.";
+
+
+document.getElementById(
+"heroDescription"
+).textContent=
+data.hero.description || "";
+
+}
+
+
+/* FEATURED */
+
+loadFeatured(
+data.featured
+);
+
+
+/* EVENTS */
+
+loadEvents(
+data.events
+);
+
+}
+)
+
+.catch(
+error=>{
+
+console.error(error);
+
+
+document.getElementById(
+"featuredEvent"
+).innerHTML=`
+
+<div class="empty">
+
+Data event belum dapat dimuat.
+
+</div>
+
+`;
+
+
+document.getElementById(
+"eventList"
+).innerHTML=`
+
+<div class="empty">
+
+Pastikan <b>event.json</b>
+berada di folder yang sama dengan
+<b>index.html</b>.
+
+</div>
+
+`;
+
+}
+);
+
+</script>
+
+
+</body>
+
+  </html>
